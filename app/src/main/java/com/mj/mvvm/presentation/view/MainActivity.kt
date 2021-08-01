@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         mainRecyclerView.layoutManager = lm
         mainRecyclerView.setHasFixedSize(true)
 
-        contactViewModel = ViewModelProvider(application).get(ContactViewModel::class.java)
+        contactViewModel = ViewModelProvider(this).get(ContactViewModel::class.java)
         contactViewModel.getAll().observe(this, Observer<List<ContactEntity>> { contacts ->
             adapter.setContacts(contacts)
         })
